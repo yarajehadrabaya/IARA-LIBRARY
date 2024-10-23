@@ -58,7 +58,7 @@ const BookDetailPage = () => {
         userId: currentUserId,
       }));
       alert("Book borrowed successfully!");
-      window.location.reload();
+      
     })
     .catch((error) => {
       console.error("Error borrowing the book:", error.message);
