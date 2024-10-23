@@ -73,35 +73,7 @@ const HomePage = () => {
     startCounting(setChapters, 422);
     startCounting(setActiveReaders, 1055);
     startCounting(setAwards, 20);
-    
-    const map = document.querySelector('.leaflet-container');
-        let isDragging = false;
 
-        const handleTouchStart = () => {
-            isDragging = true;
-        };
-
-
-
-        const handleTouchEnd = () => {
-            isDragging = false;
-        };
-
-        const handleTouchMove = (event) => {
-            if (!isDragging) {
-                event.preventDefault(); // منع تفاعل الخريطة مع الحركة
-            }
-          };
-
-          map.addEventListener('touchstart', handleTouchStart);
-          map.addEventListener('touchend', handleTouchEnd);
-          map.addEventListener('touchmove', handleTouchMove);
-          return () => {
-            map.removeEventListener('touchstart', handleTouchStart);
-            map.removeEventListener('touchend', handleTouchEnd);
-            map.removeEventListener('touchmove', handleTouchMove);
-        };
-  
     fetchBooks();
   }, []);
 
@@ -397,8 +369,8 @@ const HomePage = () => {
             touchZoom={false} 
             dragging={false} // تعطيل السحب
             doubleClickZoom={false} // تعطيل التكبير بالضغط المزدوج
-            boxZoom={false} // تعطيل تكبير الصندوق 
-            style={{ height: '100vh', width: '100%' }}> {/* قم بتعديل قيمة الزوم هنا */}
+            boxZoom={false} // تعطيل تكبير الصندوق
+           style={{ height: '100vh', width: '100%' }}> {/* قم بتعديل قيمة الزوم هنا */}
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
