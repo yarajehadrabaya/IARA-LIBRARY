@@ -210,37 +210,37 @@ const HomePage = () => {
             <div className="cards">
               <div className="card">
                 <p>01</p>
-                <h3>Novels and stories</h3>
+                <h3 style={{fontSize:"24px",fontWeight:"bold"}}> Novels and stories</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
               </div>
               <div className="card">
                 <p>02</p>
-                <h3>Technology and Internet</h3>
+                <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Technology and Internet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
               </div>
               <div className="card">
                 <p>03</p>
-                <h3>Scientific books</h3>
+                <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Scientific books</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
               </div>
               <div className="card">
                 <p>04</p>
-                <h3>Psychology and self-development</h3>
+                <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Psychology and self-development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
               </div>
               <div className="card">
                 <p>05</p>
-                <h3>Arts</h3>
+                <h3  style={{fontSize:"24px",fontWeight:"bold"}} >Arts</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
               </div>
               <div className="card">
                 <p>06</p>
-                <h3>Children's books</h3>
+                <h3   style={{fontSize:"24px",fontWeight:"bold"}}>Children's books<b></b></h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
               </div>

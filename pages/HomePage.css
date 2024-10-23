@@ -19,7 +19,11 @@
     align-items: center; 
     box-sizing: border-box; 
 }
+h3{
+    all:unset;
+    font-size: 24px;
 
+}
 /* Adjust logo position */
 .logo {
     margin-top: 20px;
