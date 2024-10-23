@@ -81,6 +81,8 @@ const HomePage = () => {
             isDragging = true;
         };
 
+
+
         const handleTouchEnd = () => {
             isDragging = false;
         };
@@ -391,7 +393,12 @@ const HomePage = () => {
  {/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
              
          {/* Start map section */}
-          <MapContainer center={position} zoom={10} scrollWheelZoom={false} touchZoom={false} style={{ height: '100vh', width: '100%' }}> {/* قم بتعديل قيمة الزوم هنا */}
+          <MapContainer center={position} zoom={10}  scrollWheelZoom={false} 
+            touchZoom={false} 
+            dragging={false} // تعطيل السحب
+            doubleClickZoom={false} // تعطيل التكبير بالضغط المزدوج
+            boxZoom={false} // تعطيل تكبير الصندوق 
+            style={{ height: '100vh', width: '100%' }}> {/* قم بتعديل قيمة الزوم هنا */}
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
