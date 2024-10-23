@@ -115,8 +115,8 @@ const HomePage = () => {
     <div>
   
       
-      <div className="main-container">
-        <div className="search-section" style={{ backgroundImage: 'url("/img/poster.png")' }}>
+      <div className="main-container" id="home">
+        <div className="search-section" style={{ backgroundImage: 'url("/img/poster.png")' }} id="search">
           <div className="logo">
             <img src="/img/logo.png" alt="Site Logo" />
           </div>

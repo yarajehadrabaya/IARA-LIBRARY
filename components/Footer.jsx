@@ -33,20 +33,20 @@ const Footer = () => {
           <div id="impty-div"></div>
           <nav>
             <ul id="home-list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#book-categories">book-categories</a></li>
-              <li><a href="#books">Our Books</a></li>
-              <li><a href="#testimonial">Our Testimonials</a></li>
-              <li><a href="#">Find your book</a></li>
+              <li> <Link to="/"><a href="#home">Home</a></Link></li>
+              <li>  <Link to="/"><a href="#book-categories">book-categories</a></Link> </li>
+              <li><Link to="/"> <a href="#books">Our Books</a></Link></li>
+              <li><Link to="/"> <a href="#testimonial">Our Testimonials</a> </Link>  </li>
+              <li>  <Link to="/"> <a href="#search">Find your book</a></Link> </li>
             </ul>
           </nav>
           <nav>
             <ul id="about-us-list">
               <li><Link to="/about">About Us</Link></li>
               
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Achievements</a></li>
-              <li><a href="#">Our Goals</a></li>
+              <li><Link to="/about">Company</Link></li>
+              <li><Link to="/about">Achievements</Link></li>
+              <li><Link to="/about">Our Goals</Link></li>
             </ul>
           </nav>
           <div className="social-media">
