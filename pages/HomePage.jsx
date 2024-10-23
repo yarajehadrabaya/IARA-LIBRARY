@@ -73,7 +73,33 @@ const HomePage = () => {
     startCounting(setChapters, 422);
     startCounting(setActiveReaders, 1055);
     startCounting(setAwards, 20);
+    
+    const map = document.querySelector('.leaflet-container');
+        let isDragging = false;
 
+        const handleTouchStart = () => {
+            isDragging = true;
+        };
+
+        const handleTouchEnd = () => {
+            isDragging = false;
+        };
+
+        const handleTouchMove = (event) => {
+            if (!isDragging) {
+                event.preventDefault(); // منع تفاعل الخريطة مع الحركة
+            }
+          };
+
+          map.addEventListener('touchstart', handleTouchStart);
+          map.addEventListener('touchend', handleTouchEnd);
+          map.addEventListener('touchmove', handleTouchMove);
+          return () => {
+            map.removeEventListener('touchstart', handleTouchStart);
+            map.removeEventListener('touchend', handleTouchEnd);
+            map.removeEventListener('touchmove', handleTouchMove);
+        };
+  
     fetchBooks();
   }, []);
 
