@@ -1,14 +1,12 @@
-.body{
+body {
     min-height: 100vh; /* ارتفاع الصفحة بالكامل */
     background: linear-gradient(to bottom, #d3d3d285, #ffffff); /* تدرج لوني من البيج إلى الأبيض */
 }
 
-
-
 .book-list-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 20px; /* تقليل الحشو */
     margin-top: 60px; /* هامش علوي لتجنب تداخل المحتوى مع الناف بار */
 }
 
@@ -23,7 +21,7 @@
 
 .book-table th, .book-table td {
     border: 1px solid #ddd;
-    padding: 10px; /* تقليل الحشو */
+    padding: 8px; /* تقليل الحشو */
     text-align: left;
     font-family: 'Arial', sans-serif;
 }
@@ -72,6 +70,7 @@
     text-align: center; /* محاذاة النص داخل الزر في المنتصف */
     transition: background-color 0.3s, box-shadow 0.3s; /* انتقال سلس عند تغيير اللون والظل */
     border: 2px solid transparent; /* حد شفاف ليتناسب مع الخلفية */
+    width: auto; /* عرض تلقائي للأزرار */
 }
 
 .edit-button {
@@ -104,8 +103,24 @@
     max-width: 400px;
 }
 
+/* استجابة للتصميم */
 @media (max-width: 768px) {
+    .book-list-container {
+        padding: 5px; /* تقليل الحشو في الأجهزة الصغيرة */
+    }
+
+    .book-table th, .book-table td {
+        font-size: 10px; /* تقليل حجم النص في الجداول */
+        padding: 4px; /* تقليل الحشو في الجداول */
+    }
+
     .edit-button, .delete-button, .add-button {
         width: 100%; /* جعل الأزرار تمتد على العرض الكامل في الأجهزة الصغيرة */
+        font-size: 10px; /* تقليل حجم النص في الأزرار */
+        padding: 3px; /* تقليل حجم الحشو في الأزرار */
+    }
+
+    .search-bar {
+        margin-bottom: 10px; /* تقليل المسافة بين شريط البحث وباقي المحتوى */
     }
 }

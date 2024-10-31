@@ -1,4 +1,4 @@
-
+//HomePage.jsx 
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -32,6 +32,10 @@ const HomePage = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
+   // دالة التعامل مع ضغط الزر لعرض الكتب حسب الفئة
+   const handleCategoryClick = (category) => {
+    navigate(`/categories`, { state: { category } });
+  };
 
  // for counter section
   const [totalPages, setTotalPages] = useState(0);
@@ -210,39 +214,51 @@ const HomePage = () => {
             <div className="cards">
               <div className="card">
                 <p>01</p>
-                <h3 style={{fontSize:"24px",fontWeight:"bold"}}> Novels and stories</h3>
+                <h3 style={{fontSize:"24px",fontWeight:"bold"}}> Novels</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
+                 <button onClick={() => handleCategoryClick("novel")}>
+                <img src="/img/arrow.svg" alt="arrow-icon" />
+              </button>
               </div>
               <div className="card">
                 <p>02</p>
-                <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Technology and Internet</h3>
+                <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Stories</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
+                <button onClick={() => handleCategoryClick("stories")}>
+                <img src="/img/arrow.svg" alt="arrow-icon" />
+              </button>
               </div>
               <div className="card">
                 <p>03</p>
                 <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Scientific books</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
+                <button onClick={() => handleCategoryClick("scientific")}>
+                <img src="/img/arrow.svg" alt="arrow-icon" />
+              </button>
               </div>
               <div className="card">
                 <p>04</p>
                 <h3  style={{fontSize:"24px",fontWeight:"bold"}}>Psychology and self-development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
+                <button onClick={() => handleCategoryClick("self-development")}>
+                <img src="/img/arrow.svg" alt="arrow-icon" />
+              </button>
               </div>
               <div className="card">
                 <p>05</p>
                 <h3  style={{fontSize:"24px",fontWeight:"bold"}} >Arts</h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
+                <button onClick={() => handleCategoryClick("arts")}>
+                <img src="/img/arrow.svg" alt="arrow-icon" />
+              </button>
               </div>
               <div className="card">
                 <p>06</p>
                 <h3   style={{fontSize:"24px",fontWeight:"bold"}}>Children's books<b></b></h3>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button><img src="/img/arrow.svg" alt="arrow-icon" /></button>
+                <button onClick={() => handleCategoryClick("children")}>
+                <img src="/img/arrow.svg" alt="arrow-icon" />
+              </button>
               </div>
             </div>
           </div>
@@ -282,8 +298,9 @@ const HomePage = () => {
                           e.target.src = "/img/default-book.png";
                         }}
                       />
-                      <p className="author">{book.author}</p>
-                      <h3>{book.title}</h3>
+                      <p className="title" style={{color:"black" }} >{book.title}</p>
+                      <p className="author">By: {book.author}</p>
+                      
                     </Link>
                     <button onClick={() => handleBorrowClick(book.id)}>Borrow</button>
                   </div>

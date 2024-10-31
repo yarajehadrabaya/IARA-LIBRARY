@@ -11,6 +11,7 @@ import MyBooks from "../pages/MyBooksPage";
 import Navbar from "../components/Navbar"; 
 import Footer from "../components/Footer";  // استيراد الفوتر
 import { ToastContainer } from 'react-toastify';
+import CategoriesPage from"../pages/CategoriesPage";
 
 function App() {
   const [userType, setUserType] = useState(null); // استخدام الحالة لتحديد نوع المستخدم
@@ -31,6 +32,9 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} /> 
 
         <Route path="/my_books" element={<MyBooks />} />
+
+        <Route path="/categories" element={<CategoriesPage />} />
+        
       </Routes>
       <Footer /> 
     </BrowserRouter>

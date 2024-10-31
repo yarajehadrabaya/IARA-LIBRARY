@@ -33,11 +33,11 @@ const Footer = () => {
           <div id="impty-div"></div>
           <nav>
             <ul id="home-list">
-              <li> <Link to="/"><a href="#home">Home</a></Link></li>
-              <li>  <Link to="/"><a href="#book-categories">book-categories</a></Link> </li>
-              <li><Link to="/"> <a href="#books">Our Books</a></Link></li>
-              <li><Link to="/"> <a href="#testimonial">Our Testimonials</a> </Link>  </li>
-              <li>  <Link to="/"> <a href="#search">Find your book</a></Link> </li>
+              <li> <Link to="/">Home</Link></li>
+              <li>  <Link to="/">book-categories</Link> </li>
+              <li><Link to="/"> Our Books</Link></li>
+              <li><Link to="/"> Our Testimonials</Link>  </li>
+              <li>  <Link to="/">Find your book</Link> </li>
             </ul>
           </nav>
           <nav>
