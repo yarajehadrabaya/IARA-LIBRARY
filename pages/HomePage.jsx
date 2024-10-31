@@ -200,7 +200,7 @@ const HomePage = () => {
               display: 'inline-block',
               marginBottom:"40px"
             }}>
-              Books Categories
+            Categories
               <span style={{content: '""',position: 'absolute',left: '50%', transform: 'translateX(-50%)', bottom: '-10px',
                 width: '90%',
                 height: '6px',    
