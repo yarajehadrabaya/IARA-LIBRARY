@@ -15,7 +15,7 @@ ________________________________________________________________________________
 ### Project Type ?
 Front end 
 _______________________________________________________________________________________________________________________
-###Pages:
+### Pages:
 # HomePage Components and Technologies
 
 The **HomePage** of the library system project is designed to provide an interactive and user-friendly interface. Below are the main components and technologies used for building it:
