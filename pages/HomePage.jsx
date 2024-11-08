@@ -7,17 +7,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 // Font Awesome : for map section icons
 const icon = L.divIcon({
-    className: 'custom-icon', // يمكنك إضافة أنماط خاصة هنا
-    html: `<div style="color: red; font-size: 24px;"><i class="fas fa-map-marker-alt"></i></div>`, // أيقونة فونت أوسوم
-    iconSize: [25, 41], // حجم الأيقونة
-    iconAnchor: [12, 41], // نقطة الإرساء للأيقونة
-    popupAnchor: [1, -34], // نقطة الإرساء لنافذة المنبثقة
-});
+  className: 'custom-icon',
+  html: `<div style="color: red; font-size: 30px; text-align: center;"><i class="fas fa-map-marker-alt"></i></div>`,
+  iconSize: [50, 100],  // حجم الأيقونة
+  iconAnchor: [19, 50],  // رفع الأيقونة للأعلى قليلاً
+  popupAnchor: [1, -40], // رفع النافذة المنبثقة للأعلى
+})
 
 const HomePage = () => {
   // Coordinates for Jenin for map section
@@ -273,9 +275,9 @@ const HomePage = () => {
           <div className="container">
             <div className="title">
             <h2 style={{ color: 'rgb(0, 0, 0)',fontSize: '40px',textAlign: 'center', position: 'relative', display: 'inline-block'}}>
-              Our BOOKS
+                        Borrowable Books
               <span style={{content: '""',position: 'absolute',left: '50%', transform: 'translateX(-50%)',bottom: '-10px',
-                width: '80%',       // التحكم بطول الخط السفلي
+                width: '90%',       // التحكم بطول الخط السفلي
                 height: '6px',      // التحكم بسمك الخط 
                 backgroundColor: 'orange',
                 borderRadius: '5px' // تدوير حواف الخط
@@ -316,9 +318,9 @@ const HomePage = () => {
         
  {/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */}       
         {/* Start testimonials section */}
-        <section class="Our-testimonials" id="testimonial">
-        <div class="container">
-            <div class="tittle">
+        <section className="Our-testimonials" id="testimonial">
+        <div className="container">
+            <div className="tittle">
             <h2 style={{ color: 'rgb(0, 0, 0)',fontSize: '40px',textAlign: 'center', position: 'relative',display: 'inline-block'}}>
               Our Testimonials
               <span style={{ content: '""', position: 'absolute', left: '50%',transform: 'translateX(-50%)', bottom: '-10px',
@@ -329,45 +331,45 @@ const HomePage = () => {
               }}></span>
             </h2>
           </div>
-                    <div class="cards">
-                        <div class="card">
+                    <div className="cards">
+                        <div className="card">
                             <p>My experience with the book borrowing system has been fantastic! I can now browse a wide range of books from the comfort of my home without having to go to the library. The customer support was very helpful, 
                               and I received quick responses to my inquiries. I highly recommend trying it!</p>
-                            <div class="heading">
-                                <div class="person">
+                            <div className="heading">
+                                <div className="person">
                                     <img src="/img/testimonial/mohammad.jpg" alt="mohammad"/>
                                     <p>Mohammad D</p>
                                 </div>
                                 <button>Read Full Story</button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div className="card">
                             <p>I really loved my experience using the book borrowing site! I faced some challenges initially, but the support team was incredibly professional and helped me out quickly. 
                               The ability to rate books makes choosing easier, and I've been borrowing books regularly now!</p>
-                            <div class="heading">
-                                <div class="person">
+                            <div className="heading">
+                                <div className="person">
                                     <img src="/img/testimonial/jason.png" alt="Jason"/>
                                     <p>Jason M</p>
                                 </div>
                                 <button>Read Full Story</button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div className="card">
                             <p>I can't say enough good things about this book borrowing platform! It has made accessing books so convenient and hassle-free. The interface is intuitive, and I appreciate the variety of genres available.  
                               This service has truly enhanced my reading experience</p>
-                            <div class="heading">
-                                <div class="person">
+                            <div className="heading">
+                                <div className="person">
                                     <img src="/img/testimonial/sam.jpg" alt="sam"/>
                                     <p>Sam R</p>
                                 </div>
                                 <button>Read Full Story</button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div className="card">
                             <p>This system is a true revolution in the library world! The service is excellent, and books are always available. I've borrowed many books and enjoyed every moment. The additional features like a personal reading 
                               list make it easy to keep track of what I’m reading. Thank you for this amazing service!</p>
-                            <div class="heading">
-                                <div class="person">
+                            <div className="heading">
+                                <div className="person">
                                     <img src="/img/testimonial/michael.png" alt="Michael"/>
                                     <p>Michael K</p>
                                 </div>
@@ -382,22 +384,17 @@ const HomePage = () => {
  {/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
              
          {/* Start map section */}
-          <MapContainer center={position} zoom={10}  scrollWheelZoom={false} 
-            touchZoom={false} 
-            dragging={false} // تعطيل السحب
-            doubleClickZoom={false} // تعطيل التكبير بالضغط المزدوج
-            boxZoom={false} // تعطيل تكبير الصندوق
-           style={{ height: '100vh', width: '100%' }}> {/* قم بتعديل قيمة الزوم هنا */}
-            <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={position} icon={icon}>
-                <Popup>
-                    This is the city of Jenin!
-                </Popup>
-            </Marker>
-        </MapContainer>
+         <MapContainer center={position} zoom={10} scrollWheelZoom={false} style={{ height: '100vh', width: '100%' }}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={position} icon={icon}>
+        <Popup>
+          This is the city of Jenin!
+        </Popup>
+      </Marker>
+    </MapContainer>
        {/* END map section */}
 
       </div>

@@ -6,6 +6,7 @@ function BookListPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [editBookId, setEditBookId] = useState(null);
   const [formData, setFormData] = useState({ title: '', author: '', price: '' });
+  const [addFormData, setAddFormData] = useState({ title: '', author: '', price: '' });
 
   const token = localStorage.getItem('token');
 
@@ -20,11 +21,8 @@ function BookListPage() {
       },
     });
     const data = await response.json();
-    console.log('Fetched books:', data);
     setBooks(data);
   };
-
-  
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this book?')) {
@@ -44,12 +42,9 @@ function BookListPage() {
     }
   };
 
-
-
   const handleEdit = async (id) => {
     if (editBookId === id) {
       if (window.confirm('Are you sure you want to save changes?')) {
-        console.log('Editing book with ID:', id, 'Data to send:', formData);
         const response = await fetch(`https://ahllibrary.azurewebsites.net/api/Book/Editbook/${id}`, {
           method: 'PUT',
           headers: {
@@ -79,18 +74,16 @@ function BookListPage() {
   };
 
   const handleAdd = async () => {
-    if (!formData.title || !formData.author || !formData.price) {
+    if (!addFormData.title || !addFormData.author || !addFormData.price) {
       alert('Please fill in all fields.');
       return; 
     }
   
     if (window.confirm('Are you sure you want to add this book?')) {
-      console.log('Adding new book with data:', formData);
-  
       const data = new FormData();
-      data.append('title', formData.title);
-      data.append('author', formData.author);
-      data.append('price', parseFloat(formData.price));
+      data.append('title', addFormData.title);
+      data.append('author', addFormData.author);
+      data.append('price', parseFloat(addFormData.price));
   
       const response = await fetch('https://ahllibrary.azurewebsites.net/api/Book/AddBook', {
         method: 'POST',
@@ -101,14 +94,13 @@ function BookListPage() {
       });
   
       if (response.ok) {
-        const addedBook = await response.json(); // Assuming the API returns the added book details
-        setFormData({ title: '', author: '', price: '' });
+        setAddFormData({ title: '', author: '', price: '' });
         fetchBooks();
-        console.log(`Book added successfully!\nTitle: ${addedBook.title}\nAuthor: ${addedBook.author}\nPrice: ${addedBook.price}`);
+        alert('Book added successfully.');
       } else {
         const errorData = await response.json();
         console.error('Error adding book:', errorData);
-        console.log(`Failed to add the book: ${errorData.message || 'Unknown error'}`);
+        alert(`Failed to add the book: ${errorData.message || 'Unknown error'}`);
       }
     }
   };
@@ -165,20 +157,20 @@ function BookListPage() {
           <input
             type="text"
             placeholder="Title"
-            value={formData.title}
-            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            value={addFormData.title}
+            onChange={(e) => setAddFormData({ ...addFormData, title: e.target.value })}
           />
           <input
             type="text"
             placeholder="Author"
-            value={formData.author}
-            onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+            value={addFormData.author}
+            onChange={(e) => setAddFormData({ ...addFormData, author: e.target.value })}
           />
           <input
             type="text"
             placeholder="Price"
-            value={formData.price}
-            onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+            value={addFormData.price}
+            onChange={(e) => setAddFormData({ ...addFormData, price: e.target.value })}
           />
           <button className="add-button" onClick={handleAdd}>Add Book</button>
         </div>

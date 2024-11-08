@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './LoginPage.css';
+import ConfettiEffect from "../components/ConfettiEffect"; 
 
 function LoginPage() {
   const [username, setUsername] = useState(""); 
@@ -8,10 +9,12 @@ function LoginPage() {
   const navigate = useNavigate(); 
   const location = useLocation();
   const [successMessage, setSuccessMessage] = useState('');
+  const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
     if (location.state?.fromRegister) {
       setSuccessMessage("Account created successfully! Please log in.");
+      setShowConfetti(true); // عرض تأثير القصاصات
     }
   }, [location.state]);
 
@@ -67,6 +70,7 @@ function LoginPage() {
       <div className="login-box">
         <h1>Login</h1>
         {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+        {showConfetti && <ConfettiEffect />} {/* تأثير القصاصات */}
 
         <div>
           <label htmlFor="username">Username</label>
@@ -95,4 +99,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
