@@ -15,36 +15,36 @@ ________________________________________________________________________________
 ### Project Type ?
 Front end 
 _______________________________________________________________________________________________________________________
-### Pages:
-# HomePage Components and Technologies
+# Pages:
+## HomePage Components and Technologies
 
 The **HomePage** of the library system project is designed to provide an interactive and user-friendly interface. Below are the main components and technologies used for building it:
 
-## 1. Sticky Navigation Bar (Navbar)
+### 1. Sticky Navigation Bar (Navbar)
    - A sticky navigation bar is used to provide quick access to important sections, and it adapts dynamically based on the user's role (Admin or Student).
    - **Technology**: React, CSS (for styling), and dynamic rendering based on user roles.
 
-## 2. Book Display Section
+### 2. Book Display Section
    - A section displaying a list of books, fetched from the API, where users can browse available books.
    - **Technology**: React, API calls (Google Books API or custom API), CSS Grid/Flexbox for layout, and responsive design for different screen sizes.
 
-## 3. Search Bar
+### 3. Search Bar
    - An interactive search bar is provided above the book display section, allowing users to search for books by title, author, or genre.
    - **Technology**: React, custom search logic, and CSS for styling.
 
-## 4. User Role-Based Interface
+### 4. User Role-Based Interface
    - The HomePage dynamically adapts based on whether the user is an Admin or a Student, offering different functionalities for each role.
    - **Technology**: React (conditional rendering), API for role checking, and state management (using hooks or Context API).
 
-## 5. Responsive Design
+### 5. Responsive Design
    - The HomePage is fully responsive and adapts to different screen sizes, ensuring optimal viewing on mobile and desktop devices.
    - **Technology**: CSS Media Queries, Flexbox, and Grid layout.
 
-## 6. API Integration
+### 6. API Integration
    - The HomePage communicates with the backend to fetch books and other data. It supports pagination, error handling, and real-time data updates.
    - **Technology**: Fetch API, Axios, or other HTTP request libraries, with error handling in React.
 
-## 7. Styling
+### 7. Styling
    - The styling of the page uses modern CSS techniques to ensure a clean and modern look, including background images, gradients, and hover effects.
    - **Technology**: CSS3, Flexbox, Grid, and custom themes based on the brand's color palette.
 
