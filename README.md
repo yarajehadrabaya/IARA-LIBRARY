@@ -7,8 +7,7 @@ access to add, edit, and remove books, while students can only borrow and return
 books. Anyone visiting the website can search and view the list of books, but only registered
 users can borrow them. The system will be designed to work well on all devices and provide a
 smooth, user-friendly experience.
-### 🌍 Live Demo :
-[planner you](https://planneryou.netlify.app/index.html) - "Responsive"
+
 ### Authors:
 * 	👩💻Yara Jehad Rabaya
 _______________________________________________________________________________________________________________________
